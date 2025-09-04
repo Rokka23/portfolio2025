@@ -1,0 +1,502 @@
+@charset "utf-8";
+
+/* ========================================
+    リセットcss
+========================================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style:normal;
+	font-weight: normal;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html{overflow-y: scroll;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: ''; content: none;}
+input, textarea,{margin: 0; padding: 0;}
+ol, ul{list-style:none;}
+table{border-collapse: collapse; border-spacing:0;}
+caption, th{text-align: left;}
+a:focus {outline:none;}
+
+/* micro clearfix */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+
+
+
+/* ヘッダーここから　*/
+
+header {
+	display: flex;
+	justify-content: space-between;   /* 左右に分ける　*/
+	align-items: center;             /*　縦に中央揃え　*/
+    height: 10px;
+    background-color: #ffffff;
+	text-align: left;
+	padding: 70px 50px;
+    color: #111;
+	border-bottom: 4px solid #fcd162;
+	font-family: 'Playfair Display', serif;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;        /*　縦に並ぶ　*/
+}
+
+h1 {
+	color: #7b6249;
+	font-size: 35px;
+	font-weight: bold;
+	letter-spacing: 0.2em;        /*　文字間隔を広げる　*/
+}
+
+
+/* ヘッダーナビ部分　*/
+.option {
+	text-align: right;
+}
+
+.option nav ul {
+	display: flex;   /*　横並び　*/
+}
+
+.option nav ul li {
+	margin-left: 20px;     /*　ナビ間の余白　*/
+}
+
+.option nav ul li a {
+	text-decoration: none;
+	color: #111;
+	transition: color 0.3s;   /*　アニメーション　なめらか　*/
+}
+
+.option nav ul li a:hover {
+	color: #fcd162;
+}
+
+
+
+
+/*　　自己紹介　*/
+.intro {
+	color: #777777;
+	font-size: 20px;
+	font-family: 'Playfair Display', serif;
+	max-width: 800px;
+	margin: 70px auto;
+	padding: 20px;
+	line-height: 1.8;
+	text-align: center;
+}
+
+.intro h2 {
+	font-size: 60px;
+	margin-bottom: 10px;
+	
+}
+
+.fade-in {
+	opacity: 0;
+	animation: fadeIn 2.5s ease-out forwards;
+	animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	  transform: translateY(20px); /* 下からちょっと上がってくる感じ */
+	}
+	100% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+
+.line {
+    border: none;
+    border-bottom: 5px dotted #fcd162;
+	width: 70%;
+	margin: 30px auto 50px;
+    margin-bottom: 20px;
+ 
+  }
+
+
+
+/* ギャラリー紹介部分　*/
+.gellery {
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	color: #777777;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 0.1em;  
+
+}
+
+.container {
+	margin: 30px;
+	display: flex;       /*　横並び　*/
+	gap: 90px;          /*　画像の間隔　*/
+	justify-content: center;     /*　中央揃え　*/
+	
+}
+
+.container img {
+	width: 250px;
+}
+
+a.view {
+	display: block;
+	text-decoration: none;
+	font-size: 15px;
+	text-align: right;
+	padding-right: 400px;
+	color: #777777;
+	transition: color 0.3s; 
+}
+
+a.view:hover {
+	color: #fcd162;
+}
+
+
+
+/*　自己紹介　*/
+
+.self {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+
+}
+
+
+.self img {
+	margin: 150px;
+	padding-left: 150px;
+	justify-content: flex-start;      /*　画像左寄せ　*/
+	width: 180px;
+	height: auto;                     /*　縦横比を保つ　*/
+	margin-right: 50px;
+
+}
+
+.profile {
+	text-align: left;
+	font-family:'Playfair Display', serif ;
+	margin-left: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: clamp(420px, 50vw, 600px);  
+
+}
+
+.profile h4 {
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.profile p {
+	margin: 0 0 12px;
+	max-width: 100ch;
+	line-height: 1.7;
+	max-width: 100%;
+}
+
+.profile a {
+	align-self: flex-end;
+	text-decoration: none;
+	color: #777777;
+	transition: color 0.3s; 
+}
+
+.profile a:hover {
+	color: #fcd162;
+}
+
+
+
+/*　フッターここから　*/
+footer {
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+}
+
+
+
+
+
+
+
+
+/*　ABOUTページここから　*/
+/* 自己紹介部分　*/
+
+.name {
+	margin: 70px auto;
+	color: #777777;
+	font-family: 'Playfair Display', serif;
+
+}
+
+.name h2 {
+	text-align: center;
+	font-size: 60px;
+	margin-bottom: 10px;
+}
+
+.name .intro {
+	display: flex;                   /*　横並び　*/
+	align-items: center;
+	gap: 100px;
+}
+
+.name img {
+	width: 200px;
+	height: auto;
+}
+
+.name p {
+	font-size: 23px;
+	margin: 0;
+	text-align: left;
+	line-height: 3.0;             /*　行間を調整　*/         
+}
+
+
+
+/*　スキル・強み・経歴　*/
+.skill ul {
+	list-style-type: circle;
+	padding-left: 20px;
+}
+
+.skill {
+	display: flex;
+	align-items: center;           /* 上揃え　*/
+	color: #777777;
+	font-family: 'Playfair Display', serif;
+	gap: 10px;
+	margin-bottom: 100px;
+	padding-left: 50px;
+}
+
+.skill img {
+	width: 100px;
+	height: auto;
+	margin-left: 150px;
+}
+
+.skill .text {
+	display: flex; 
+	gap: 70px;     
+}
+
+.skill h3 {
+	font-weight: bold;
+	font-size: 20px;
+    color: #111;
+}
+
+.strong {
+	display: flex;
+	align-items: center;             /* 上揃え　*/
+	color: #777777;
+	font-family: 'Playfair Display', serif;
+	gap: 10px;
+	margin-bottom: 100px;
+	padding-left: 50px;
+}
+
+.strong ul {
+	list-style-type: circle;
+	padding-left: 20px;
+}
+
+.strong img {
+	width: 100px;
+	height: auto;
+	margin-left: 150px;
+}
+
+.strong .text {
+	display: flex;
+	gap: 93px;
+}
+
+.strong h3 {
+	font-weight: bold;
+	font-size: 20px;
+    color: #111;
+}
+
+
+.work {
+	display: flex;
+	align-items: center;            /* 上揃え　*/
+	color: #777777;
+	font-family: 'Playfair Display', serif;
+	gap: 10px;
+	margin-bottom: 100px;
+	padding-left: 50px;
+}
+
+.work ul {
+	list-style-type: circle;
+	padding-left: 20px;
+}
+
+.work img {
+	width: 100px;
+	height: auto;
+	margin-left: 150px;
+}
+
+.work .text {
+	display: flex;
+	gap: 95px;
+}
+
+.work h3 {
+	font-weight: bold;
+	font-size: 20px;
+    color: #111;
+}
+
+.in p {
+	text-align: center;
+}
+
+
+
+/*　ギャラリー部分ここから　*/
+  a img {
+    transition: 0.3s ease;
+  }
+
+
+  a img:hover {
+    opacity: 0.8;
+  }
+
+
+  a:hover img {
+    transform: scale(0.97);
+  }
+
+.project {
+	display: flex;
+	max-width: 900px;
+	margin: 20px auto;
+	padding: 10px;
+	color: #777777;
+	font-family: 'Playfair Display', serif;
+}
+
+.project-card {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+	padding-bottom: 20px;
+}
+
+.project-card img {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+	border: 1px solid #ccc;
+	object-fit: cover;
+	margin-bottom: 100px;
+}
+
+.project-text h4 {
+	margin-top: 0;
+	font-size: 20px;
+    font-weight: bold;
+	color: #7b6249;
+	line-height: 3.0;
+
+}
+
+.project-text li {
+	line-height: 2.0;
+}
+
+.project-text a {
+	display: inline-block;
+	background-color: #fcd162;
+	padding: 9px 24px;
+	font-weight: bold;
+	border-radius: 8px;                /*　ボタンの角を丸く　*/
+	align-self: flex-end;
+	text-decoration: none;
+	color: #333;
+	transition: color 0.3s; 
+	line-height: 2.5;
+	margin-top: 30px;
+
+}
+
+.project-text a:hover {
+	color: #827f7f;
+	
+}
+
+
+ul {
+	padding-left: 20px;
+}
+
+.button {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 10px 20px;
+	background-color: #333;
+	color: white;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}
+
+.button:hover {
+	background-color: #666;
+}
+
+.footer p {
+	text-align: center;
+	padding: 30px 20px;
+	font-size: 14px;
+	color: #555;
+
+}
+
