@@ -474,8 +474,70 @@ footer {
 }
 
 
+.blog {
+	max-width: 800px;
+	gap: 20px;
+	color: #777777;
+	font-family: 'Playfair Display', serif;
+	margin: 20px auto;
+	padding: 10px;
+}
 
+.blog-inner {
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
+}
 
+.blog img {
+	width: 250px;
+	flex-shrink: 0;
+	transition: transform 0.3s;
+}
+
+.blog img:hover {
+	transform: scale(1.05);
+}
+
+.blog-text {
+	flex: 1;
+	padding: 10px 0;    /* 上下に余白 */
+	line-height: 1.8;
+}
+
+  .blog h4 {
+	margin-top: 10px;
+	font-size: 20px;
+    font-weight: bold;
+	color: #7b6249;
+	line-height: 1.5;
+	text-align: left;
+
+}
+
+.blog li {
+	line-height: 2.0;
+}
+
+.blog-text a {
+	display: inline-block;
+	background-color: #fcd162;
+	padding: 9px 24px;
+	font-weight: bold;
+	border-radius: 8px;                /*　ボタンの角を丸く　*/
+	align-self: flex-end;
+	text-decoration: none;
+	color: #333;
+	transition: color 0.3s; 
+	line-height: 2.5;
+	margin-top: 30px;
+
+}
+
+.blog-text a:hover {
+	color: #827f7f;
+	
+}
 
 
 
